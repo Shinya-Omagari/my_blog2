@@ -35,6 +35,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id]) #対象データを1件取得する
+    @post.destroy #destroyアクションを消す
+    redirect_to posts_path #一覧ページにリダイレクトする
   end
 
   # プライベートメソッドでストロングパラメータを作成
